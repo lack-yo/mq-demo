@@ -1,5 +1,7 @@
 package com.lou.consumer;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
@@ -13,7 +15,9 @@ import org.springframework.stereotype.Component;
 public class Receiver {
 
     @RabbitHandler
-    public void process(String context){
-        System.out.println("Receiver: "+ context);
+    public void process(String context) {
+        JSONObject object = JSON.parseObject(context);
+        System.out.println("logCount: " + object.get("logCount"));
+        System.out.println("Receiver: " + context);
     }
 }

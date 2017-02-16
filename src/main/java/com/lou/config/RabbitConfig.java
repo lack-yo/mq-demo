@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * Created by Administrator on 2017/1/15.
+ * queue的配置类
  */
 @Configuration
 public class RabbitConfig {
@@ -13,5 +14,10 @@ public class RabbitConfig {
     @Bean
     public Queue helloQueue(){
         return new Queue("hello");
+    }
+
+    @Bean
+    public Queue userQueue(){
+        return new Queue("log");
     }
 }
