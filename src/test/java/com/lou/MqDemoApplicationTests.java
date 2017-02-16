@@ -15,7 +15,9 @@ public class MqDemoApplicationTests {
 
 	@Test
 	public void contextLoads() {
-		sender.send();
+		for (int i = 0; i < 10; i++) {
+			sender.send();
+		}
 	}
 
 }
