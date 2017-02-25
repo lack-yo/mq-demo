@@ -22,7 +22,7 @@ public class Sender {
      * 创建一个routingKey为log的队列
      */
     public void send(){
-        Map map = new HashMap<>();
+        Map map = new HashMap<>(4);
         map.put("logId", "lg1");
         map.put("logCount", "10");
         map.put("logChannel", "mq");
